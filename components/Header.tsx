@@ -14,9 +14,9 @@ export default function Header() {
   ]
 
   return (
-    <header className="fixed top-0 w-full bg-background/95 backdrop-blur-sm border-b border-border z-50">
+    <header className="fixed top-0 w-full bg-[hsl(var(--background))]/95 backdrop-blur-sm border-b border-[hsl(var(--border))] z-50">
       <nav className="max-w-7xl mx-auto px-4 md:px-8 py-4 flex items-center justify-between">
-        <Link href="/" className="text-xl font-bold text-accent">
+        <Link href="/" className="text-xl font-bold text-[hsl(var(--accent))]">
           RKS.Best
         </Link>
 
@@ -26,7 +26,7 @@ export default function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className="text-muted-foreground hover:text-foreground transition-colors duration-200 text-sm font-medium"
+              className="text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--foreground))] transition-colors duration-200 text-sm font-medium"
             >
               {item.label}
             </Link>
@@ -40,17 +40,17 @@ export default function Header() {
           aria-label="Toggle menu"
         >
           <span
-            className={`w-full h-0.5 bg-foreground transition-all duration-300 ${
+            className={`w-full h-0.5 bg-[hsl(var(--foreground))] transition-all duration-300 ${
               isOpen ? 'rotate-45 translate-y-2' : ''
             }`}
           />
           <span
-            className={`w-full h-0.5 bg-foreground transition-all duration-300 ${
+            className={`w-full h-0.5 bg-[hsl(var(--foreground))] transition-all duration-300 ${
               isOpen ? 'opacity-0' : ''
             }`}
           />
           <span
-            className={`w-full h-0.5 bg-foreground transition-all duration-300 ${
+            className={`w-full h-0.5 bg-[hsl(var(--foreground))] transition-all duration-300 ${
               isOpen ? '-rotate-45 -translate-y-2' : ''
             }`}
           />
@@ -58,13 +58,13 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="absolute top-full left-0 right-0 bg-background border-b border-border md:hidden">
+          <div className="absolute top-full left-0 right-0 bg-[hsl(var(--background))] border-b border-[hsl(var(--border))] md:hidden">
             <div className="flex flex-col gap-4 p-4">
               {navItems.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-muted-foreground hover:text-foreground transition-colors duration-200 font-medium"
+                  className="text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--foreground))] transition-colors duration-200 font-medium"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.label}
